@@ -2,14 +2,12 @@ import Card from "../components/Card";
 import { CardTitle, CardText } from "material-ui";
 import withPost from "../lib/withPost";
 import { Fragment } from "react";
-import Header from "../components/Header";
 import { compose } from "../lib/utils";
-import withMaterialUi from "../lib/withMaterialUi";
+import withLayout from "../lib/withLayout";
 
 function Post({ post: { title, content } }) {
   return (
     <Fragment>
-      <Header />
       <Card>
         <CardTitle {...{ title }} />
         <CardText>
@@ -20,6 +18,6 @@ function Post({ post: { title, content } }) {
   );
 }
 
-const withProviders = compose(withPost, withMaterialUi);
+const withProviders = compose(withPost, withLayout);
 
 export default withProviders(Post);

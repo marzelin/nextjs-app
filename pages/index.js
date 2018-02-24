@@ -1,23 +1,13 @@
-import React, { Fragment } from "react";
-import Head from "../components/Head";
-import withMaterialUi from "../lib/withMaterialUi";
-import Header from "../components/Header";
 import { compose } from "../lib/utils";
 import withPosts from "../lib/withPosts";
 import PostHead from "../components/PostHead";
+import withLayout from "../lib/withLayout";
 
 function index({ posts }) {
   const Posts = posts.map(post => <PostHead key={post.id} {...post} />);
-
-  return (
-    <Fragment>
-      <Head />
-      <Header />
-      {Posts}
-    </Fragment>
-  );
+  return Posts;
 }
 
-const withProviders = compose(withPosts, withMaterialUi);
+const withProviders = compose(withPosts, withLayout);
 
 export default withProviders(index);

@@ -8,6 +8,7 @@ function Head() {
           background-color: seagreen;
         }
       `}</style>
+      <title>Next.js App</title>
     </DefaultHead>
   );
 }
