@@ -5,7 +5,7 @@ import Link from "./Link";
 
 function PostHead({ title, id }) {
   return (
-    <Link href={`/post?id=${id}`}>
+    <Link href={`/post?id=${id}`} as={`/blog/${id}`}>
       <Card>
         <CardTitle {...{ title }} />
       </Card>
